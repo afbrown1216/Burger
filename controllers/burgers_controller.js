@@ -14,6 +14,7 @@ router.get('/', function (req,res) {
 });
 
 router.post('/api/burgers', function (req, res) {
+    console.log("req",req,"res",res);
     burger.create([
         "burger_name", "devoured"
     ], [
@@ -26,13 +27,16 @@ router.post('/api/burgers', function (req, res) {
 router.put('/api/burgers/:id', function (req,res) {
     const condition = 'id =' + req.params.id;
     console.log("condition", condition ); 
+    console.log("worked", req.body.devoured);
 
     burger.update({
         devoured: req.body.devoured
     }, condition, function(result) {
         if (result.changedRows == 0 ){
+            console.log("didnt work in update");
             return res.status(404).end();
         } else {
+            console.log("burger update worked");
             res.status(200).end();
         }
     });
