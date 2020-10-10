@@ -7,7 +7,7 @@ const app = express();
 
 
 app.use(express.urlencoded({ extended: true}));
-app.use(expres.json());
+app.use(express.json());
 
 const exphbs = require("express-handlebars");
 
