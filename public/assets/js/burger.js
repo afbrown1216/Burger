@@ -3,21 +3,32 @@ $(function () {
     //burger devoured change state
     $(".change-burger").on("click", function (event) {
         var id = $(this).data("id");
-        console.log("clicked")
-        var newDevour = $(this).data("newburger");
+        // console.log("clicked")
+        // console.log('id',id)
+         var newDevour = $(this).data("newburger");
 
+        console.log(newDevour);
         var newDevourState = {
             devoured: newDevour
         };
-        $.ajax("/api/burgers" + id, {
-            type: "PUT",
+        console.log('here')
+
+        $.ajax('/api/burgers/' + id, {
+            type: 'PUT',
             data: newDevourState
-        }).then(
-            function () {
-                console.log("changed devour to", newDevour)
-                location.reload();
-            }
-        );
+        }).then(function(){
+            console.log('success');
+            location.reload();
+        })
+        // $.ajax("/api/burgers/" + id, {
+        //     type: "PUT",
+        //     data: newDevourState
+        // }).then(
+        //     function () {
+        //         console.log("changed devour to", newDevour)
+        //         location.reload();
+        //     }
+        // );
     });
     // new burger added from form 
     $(".create-form").on("submit", function (event) {
