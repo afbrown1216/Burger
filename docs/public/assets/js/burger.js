@@ -6,7 +6,6 @@ $(function () {
         // console.log("clicked")
         // console.log('id',id)
          var newDevour = $(this).data("newburger");
-
         console.log(newDevour);
         var newDevourState = {
             devoured: newDevour
