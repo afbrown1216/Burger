@@ -2,7 +2,7 @@
 
 ## Description 
 
-A full stack burger cud app. I can create,update and delete burgers while utilizing Node.js, Handlebars.js for easier html and express to host my rest api database. 
+A full stack burger crud app. I can create,update and delete burgers while utilizing Node.js, Handlebars.js for easier html and express to host my rest api database. 
 
 
 
